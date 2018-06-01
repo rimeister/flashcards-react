@@ -3,16 +3,19 @@ import React from 'react';
 class Game extends React.Component {
 	
 	constructor() {
-		console.log(this.x);
+		super();
+		this.y = 'test';
 	}
 
-	alertText() {
-		console.log(this);
+	createClickHandler: function(){
+	    return function() {
+	        alert('nice')
+	    }.bind(this)
 	}
 
 	render() {
 		return(
-			<button onClick={this.alertText}>Click to test</button>
+			<button onClick={this.createClickHandler}>Click to test</button>
 		)
 	}
 
